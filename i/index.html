@@ -184,19 +184,27 @@
 <button type="button" class="btn btn-default" style="margin-top: 5px;" id="sendZero">Zero Machine (G92)</button>
 </center>
 
+<hr style="clear: both;" />
+<div class="table-responsive">
+    <table class="table-sm">
+      <tr> 
+        <td rowspan="3"> 
+            <div id="zAxisControl" >
+                <button type="button" id="zP" class="btn btn-success btn-lg">&uarr;</button>
+                <br />
+                <button type="button" id="zM" class="btn btn-success btn-lg">&darr;</button>
+              </div>
+        </td><td>&nbsp;</td><td>&nbsp;</td><td><button type="button" id="yP" class="btn btn-primary btn-lg" >Y+</button></td><td>&nbsp;</td>
+      </tr>
+      <tr> 
+          <td>&nbsp;</td><td><button type="button" id="xM" class="btn btn-primary btn-lg" >X-</button></td><td>&nbsp;</td><td><button type="button" id="xP" class="btn btn-primary btn-lg" >X+</button></td>
+      </tr>
+      <tr><td>&nbsp;</td><td>&nbsp;</td><td><button type="button" id="yM" class="btn btn-primary btn-lg" >Y-</button></td><td>&nbsp;</td></tr>
+    </table>
+  </div> 
 
 <hr style="clear: both;" />
-
-<div id="zAxisControl" style="float: right;">
-<button type="button" id="zP" class="btn btn-info btn-sm" style="width: 10px;">&uarr;</button>
-<br />
-<button type="button" id="zM" class="btn btn-info btn-sm" style="width: 10px;">&darr;</button>
-</div>
-
-<div draggable="true" id="betterControls" style="width: 200px; height: 200px; border: 1px solid orange; padding; none; background-color: #fff;">
-<div id="betterControlsPoint" style="position: relative; top: 85px; left: 85px; background-color: red; width: 20px; height: 20px; padding: none;"></div>
-</div>
-
+  
 <br />
 
 <select class="form-control" id="jogSpeed">
@@ -219,7 +227,6 @@
 
 <br style="clear: both;" />
 
-<hr style="clear: both;" />
 
 <p style="color: #aaa; font-size: .8em; margin-top: 20px;">
 <a href="http://xyzbots.com">&copy; XYZBots 2015</a>
@@ -261,10 +268,16 @@
 <button type="button" class="btn btn-default" id="sendCommand">Send to CNC (shift+enter)</button>
 </div>
 
+
           </div>
+
         </div>
+
+        
+
       </div>
     </div>
+
 
 </body>
 </html>
