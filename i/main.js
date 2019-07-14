@@ -171,13 +171,19 @@ $(document).ready(function() {
 	});
 
 	socket.on('ports', function (data) {
-		//console.log('ports event',data);
+		console.log('ports event',data);
 		$('#choosePort').html('<option val="no">Select a serial port</option>');
+		let xcarveIndex = -1
 		for (var i=0; i<data.length; i++) {
 			$('#choosePort').append('<option value="'+i+'">'+data[i].comName+':'+data[i].pnpId+'</option>');
+
+			if(Object.keys(data).includes("pnpId") && data[i].pnpId.includes("X-Controller")){
+					console.log("Found xcarve on index "+i)
+					xcarveIndex = i
+			}
 		}
-		if (data.length == 1) {
-			$('#choosePort').val('0');
+		if (xcarveIndex >-1) {
+			$('#choosePort').val(xcarveIndex);
 			$('#choosePort').change();
 		}
 	});
