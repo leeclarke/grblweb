@@ -176,7 +176,8 @@ $(document).ready(function() {
 		let xcarveIndex = -1
 		for (var i=0; i<data.length; i++) {
 			$('#choosePort').append('<option value="'+i+'">'+data[i].comName+':'+data[i].pnpId+'</option>');
-			if(data[i].pnpId && data[i].pnpId.includes("X-Controller")){
+
+			if(Object.keys(data).includes("pnpId") && data[i].pnpId.includes("X-Controller")){
 					console.log("Found xcarve on index "+i)
 					xcarveIndex = i
 			}
