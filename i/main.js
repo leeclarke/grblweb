@@ -171,10 +171,13 @@ $(document).ready(function() {
 	});
 
 	socket.on('ports', function (data) {
-		//console.log('ports event',data);
+		console.log('ports event',data);
 		$('#choosePort').html('<option val="no">Select a serial port</option>');
 		for (var i=0; i<data.length; i++) {
 			$('#choosePort').append('<option value="'+i+'">'+data[i].comName+':'+data[i].pnpId+'</option>');
+			if(data[i].pnpId.includes("Inventables")){
+					console.log("Found xcarve on index "+i)
+			}
 		}
 		if (data.length == 1) {
 			$('#choosePort').val('0');
